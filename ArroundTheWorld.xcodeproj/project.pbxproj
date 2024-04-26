@@ -11,7 +11,6 @@
 		1F04F3982BBE9D2400E1A250 /* TagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04F3972BBE9D2400E1A250 /* TagsCell.swift */; };
 		1F0FA7CD2BD676AF004DC574 /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FA7CC2BD676AF004DC574 /* TicketController.swift */; };
 		1F0FA7CF2BD676C0004DC574 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FA7CE2BD676C0004DC574 /* TicketViewModel.swift */; };
-		1F0FA7D12BD76FA2004DC574 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F0FA7D02BD76FA2004DC574 /* city.json */; };
 		1F9674822BBFEC54006540C0 /* ImageViewer_swift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F9674812BBFEC54006540C0 /* ImageViewer_swift */; };
 		1F9ECD432ACEC2CA00DA43BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9ECD422ACEC2CA00DA43BC /* AppDelegate.swift */; };
 		1F9ECD472ACEC2CA00DA43BC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9ECD462ACEC2CA00DA43BC /* MainController.swift */; };
@@ -64,6 +63,7 @@
 		5BBD830E2BD6D2DE00966E7F /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD830D2BD6D2DE00966E7F /* TicketModel.swift */; };
 		5BBD83102BD6DBD000966E7F /* MainTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD830F2BD6DBD000966E7F /* MainTicketCell.swift */; };
 		5BBD83122BD6DF0900966E7F /* RecomendedTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD83112BD6DF0900966E7F /* RecomendedTicketCell.swift */; };
+		5BBD83132BDC1D2E00966E7F /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F0FA7D02BD76FA2004DC574 /* city.json */; };
 		5BBD8A9D2ADEF94300048439 /* FloatingPanelStocksLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD8A9C2ADEF94300048439 /* FloatingPanelStocksLayout.swift */; };
 		5BBE5AAE2B25DD1E00491DC8 /* UITableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE5AAD2B25DD1E00491DC8 /* UITableView + Extension.swift */; };
 		5BBF616E2AE04027001D035F /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF616D2AE04027001D035F /* BannerCell.swift */; };
@@ -549,7 +549,7 @@
 				5BE980152B20ED2D00893441 /* Montserrat-ThinItalic.ttf in Resources */,
 				5BE980142B20ED2D00893441 /* Montserrat-Thin.ttf in Resources */,
 				5BE9800F2B20ED2D00893441 /* Montserrat-Italic.ttf in Resources */,
-				1F0FA7D12BD76FA2004DC574 /* city.json in Resources */,
+				5BBD83132BDC1D2E00966E7F /* city.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,7 +775,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ACF2DMCJ2;
+				DEVELOPMENT_TEAM = XSLH3YV6QU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArroundTheWorld/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "кругосветка";
@@ -793,7 +793,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arroundtheworld.atw;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arroundtheworld.atw--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -814,7 +814,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ACF2DMCJ2;
+				DEVELOPMENT_TEAM = XSLH3YV6QU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArroundTheWorld/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "кругосветка";
@@ -832,7 +832,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arroundtheworld.atw;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arroundtheworld.atw--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

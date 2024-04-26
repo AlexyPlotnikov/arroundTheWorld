@@ -13,14 +13,15 @@ struct BaseTicketElement: Codable {
     let imageWay: String?
     let subtitleWay: String?
     let isWeekend, isDate: Bool?
-    let startDate, endDate, cityCode: String?
+    let startDayOfWeek, endDayOfWeek:Int?
+    let cityCode: String?
     let id: Int?
 
     enum CodingKeys: String, CodingKey {
         case titleWay = "title_way"
         case imageWay = "image_way"
         case subtitleWay = "subtitle_way"
-        case isWeekend, isDate, startDate, endDate
+        case isWeekend, isDate, startDayOfWeek, endDayOfWeek
         case cityCode = "city_code"
         case id
     }

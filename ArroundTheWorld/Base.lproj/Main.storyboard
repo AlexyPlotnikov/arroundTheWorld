@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7lP-Uo-uHB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7lP-Uo-uHB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -977,7 +977,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PDA-ap-KBY">
-                                                    <rect key="frame" x="0.0" y="8" width="393" height="190"/>
+                                                    <rect key="frame" x="0.0" y="4" width="393" height="198"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gwh-Dg-ayg">
                                                         <size key="itemSize" width="149" height="197"/>
@@ -987,7 +987,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="titleCell" id="Ory-ex-XjL" customClass="RecomendedTicketCell" customModule="ArroundTheWorld" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-3.6666666666666665" width="149" height="197"/>
+                                                            <rect key="frame" x="0.0" y="0.66666666666666663" width="149" height="197"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W14-oV-oL9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="149" height="197"/>
@@ -1030,7 +1030,7 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ticketCell" id="djG-rY-1ou" customClass="RecomendedTicketCell" customModule="ArroundTheWorld" customModuleProvider="target">
-                                                            <rect key="frame" x="159" y="-3.6666666666666665" width="149" height="197"/>
+                                                            <rect key="frame" x="159" y="0.66666666666666663" width="149" height="197"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FUE-38-KMn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="149" height="197"/>
@@ -1134,15 +1134,35 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="PDA-ap-KBY" secondAttribute="bottom" constant="8" id="09A-Pz-G3W"/>
+                                                <constraint firstAttribute="bottom" secondItem="PDA-ap-KBY" secondAttribute="bottom" constant="4" id="09A-Pz-G3W"/>
                                                 <constraint firstAttribute="trailing" secondItem="PDA-ap-KBY" secondAttribute="trailing" id="95J-PO-nat"/>
-                                                <constraint firstItem="PDA-ap-KBY" firstAttribute="top" secondItem="EBL-1q-McT" secondAttribute="top" constant="8" id="PFa-LY-Wd4"/>
+                                                <constraint firstItem="PDA-ap-KBY" firstAttribute="top" secondItem="EBL-1q-McT" secondAttribute="top" constant="4" id="PFa-LY-Wd4"/>
                                                 <constraint firstItem="PDA-ap-KBY" firstAttribute="leading" secondItem="EBL-1q-McT" secondAttribute="leading" id="hH2-lt-T8r"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionTickets" destination="PDA-ap-KBY" id="J8H-uY-InB"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="promoCell" rowHeight="206" id="mbD-62-kVP" customClass="MainTicketCell" customModule="ArroundTheWorld" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="256" width="393" height="206"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mbD-62-kVP" id="msa-Us-2W2">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="206"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-ht-RGq">
+                                                    <rect key="frame" x="12" y="4" width="369" height="198"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DMt-ht-RGq" firstAttribute="leading" secondItem="msa-Us-2W2" secondAttribute="leading" constant="12" id="D1k-IK-Gd5"/>
+                                                <constraint firstAttribute="bottom" secondItem="DMt-ht-RGq" secondAttribute="bottom" constant="4" id="Y2Q-ir-YxG"/>
+                                                <constraint firstItem="DMt-ht-RGq" firstAttribute="top" secondItem="msa-Us-2W2" secondAttribute="top" constant="4" id="iOx-kc-ttI"/>
+                                                <constraint firstAttribute="trailing" secondItem="DMt-ht-RGq" secondAttribute="trailing" constant="12" id="moa-V4-0gO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -51,12 +51,16 @@ class ModelManager: NSObject {
     }
     
     func loadWay(destinationCode:String, startDate:String, endDate:String, completion: (() -> Void)? = nil){
+//        24573
         getRequest(URLString: "https://api.travelpayouts.com/aviasales/v3/prices_for_dates?origin=\(self.getCurrentCity() ?? "")&destination=\(destinationCode)&departure_at=\(startDate)&return_at=\(endDate)&unique=false&sorting=price&direct=false&currency=rub&limit=30&page=1&one_way=false",needSecretKey: true, completion: {
             result in
            
             if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: .prettyPrinted),
                let tempTickets = try? JSONDecoder().decode(Ticket.self, from: jsonData) {
-                self.recomendTickets.append(tempTickets.data!)
+                if let data = tempTickets.data{
+                    self.recomendTickets.append(data)
+                }
+                
                 completion?()
             }
            

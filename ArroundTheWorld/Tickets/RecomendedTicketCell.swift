@@ -31,7 +31,7 @@ class RecomendedTicketCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if(self.reuseIdentifier == "cell"){
+        if(self.reuseIdentifier == "titleCell"){
             if(tintView != nil){
                 tintView.removeFromSuperview()
             }
@@ -39,7 +39,7 @@ class RecomendedTicketCell: UICollectionViewCell {
             imageRecomend.layer.cornerRadius = 16
             imageRecomend.layer.masksToBounds = true
             tintView = UIView()
-            tintView.backgroundColor = UIColor(white: 0, alpha: 0.3)
+            tintView.backgroundColor = UIColor.init(displayP3Red: 36/255, green: 36/255, blue: 36/255, alpha: 0.3)
             tintView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
             
             imageRecomend.addSubview(tintView)
