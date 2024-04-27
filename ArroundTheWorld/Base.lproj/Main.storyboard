@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7lP-Uo-uHB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7lP-Uo-uHB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1008,22 +1008,32 @@
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxX-8d-EWT">
+                                                                        <rect key="frame" x="12" y="12" width="125" height="14.333333333333336"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstItem="QpH-83-Npu" firstAttribute="top" secondItem="W14-oV-oL9" secondAttribute="top" id="2mS-nC-4j8"/>
                                                                     <constraint firstAttribute="bottom" secondItem="QpH-83-Npu" secondAttribute="bottom" id="3Dh-Ej-Eev"/>
                                                                     <constraint firstItem="HeY-lF-6Zx" firstAttribute="leading" secondItem="W14-oV-oL9" secondAttribute="leading" constant="12" id="56E-gj-WeE"/>
                                                                     <constraint firstItem="Qh1-fp-HZx" firstAttribute="leading" secondItem="W14-oV-oL9" secondAttribute="leading" constant="12" id="8XA-ss-sIy"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="qxX-8d-EWT" secondAttribute="trailing" constant="12" id="8Yl-h1-DdW"/>
                                                                     <constraint firstItem="QpH-83-Npu" firstAttribute="leading" secondItem="W14-oV-oL9" secondAttribute="leading" id="Bh7-vt-76d"/>
                                                                     <constraint firstAttribute="trailing" secondItem="HeY-lF-6Zx" secondAttribute="trailing" constant="12" id="IC4-W0-Gld"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Qh1-fp-HZx" secondAttribute="trailing" constant="12" id="Q4a-0o-Ixl"/>
                                                                     <constraint firstAttribute="trailing" secondItem="QpH-83-Npu" secondAttribute="trailing" id="baA-Ea-ibb"/>
                                                                     <constraint firstItem="Qh1-fp-HZx" firstAttribute="top" secondItem="HeY-lF-6Zx" secondAttribute="bottom" constant="4" id="fYQ-lp-MOF"/>
+                                                                    <constraint firstItem="qxX-8d-EWT" firstAttribute="leading" secondItem="W14-oV-oL9" secondAttribute="leading" constant="12" id="gQt-Bs-o91"/>
                                                                     <constraint firstAttribute="bottom" secondItem="Qh1-fp-HZx" secondAttribute="bottom" constant="12" id="jOs-qE-LMm"/>
+                                                                    <constraint firstItem="qxX-8d-EWT" firstAttribute="top" secondItem="W14-oV-oL9" secondAttribute="top" constant="12" id="z6d-7M-F1i"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="149" height="197"/>
                                                             <connections>
+                                                                <outlet property="datesRecomend" destination="qxX-8d-EWT" id="kga-Xz-4vV"/>
                                                                 <outlet property="imageRecomend" destination="QpH-83-Npu" id="GcF-tk-wCQ"/>
                                                                 <outlet property="subtitleRecomend" destination="Qh1-fp-HZx" id="FU0-x2-dFx"/>
                                                                 <outlet property="titleRecomend" destination="HeY-lF-6Zx" id="w85-bw-lrr"/>
@@ -1153,7 +1163,20 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-ht-RGq">
                                                     <rect key="frame" x="12" y="4" width="369" height="198"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="горячие 🔥 билеты горячие 🔥 билеты горячие 🔥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFo-dx-LnH">
+                                                            <rect key="frame" x="12" y="12" width="345" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="JFo-dx-LnH" firstAttribute="leading" secondItem="DMt-ht-RGq" secondAttribute="leading" constant="12" id="WON-3Z-659"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JFo-dx-LnH" secondAttribute="trailing" constant="12" id="kQy-oJ-zom"/>
+                                                        <constraint firstItem="JFo-dx-LnH" firstAttribute="top" secondItem="DMt-ht-RGq" secondAttribute="top" constant="12" id="loA-2z-zya"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -1163,6 +1186,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="DMt-ht-RGq" secondAttribute="trailing" constant="12" id="moa-V4-0gO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backView" destination="DMt-ht-RGq" id="OTz-c8-gHS"/>
+                                            <outlet property="scrollingLabel" destination="JFo-dx-LnH" id="XIv-qo-uot"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -9,10 +9,13 @@ import UIKit
 
 class RecomendedTicketCell: UICollectionViewCell {
     
+    @IBOutlet weak var datesRecomend: UILabel!
     @IBOutlet weak var imageRecomend: UIImageView!
     @IBOutlet weak var titleRecomend: UILabel!
     @IBOutlet weak var subtitleRecomend: UILabel!
     var tintView:UIView!
+    
+    
     
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var discontLbl: UILabel!

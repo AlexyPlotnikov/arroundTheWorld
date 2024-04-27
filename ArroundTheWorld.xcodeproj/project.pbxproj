@@ -775,7 +775,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XSLH3YV6QU;
+				DEVELOPMENT_TEAM = 5ACF2DMCJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArroundTheWorld/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "кругосветка";
@@ -793,7 +793,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arroundtheworld.atw--";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arroundtheworld.atw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -814,7 +814,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XSLH3YV6QU;
+				DEVELOPMENT_TEAM = 5ACF2DMCJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArroundTheWorld/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "кругосветка";
@@ -832,7 +832,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arroundtheworld.atw--";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arroundtheworld.atw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

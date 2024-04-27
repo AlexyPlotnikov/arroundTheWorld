@@ -16,48 +16,37 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
         ModelManager.shared.loadBase(completion: {
-        
                 for ticket in ModelManager.shared.baseTicket{
                     let day1 = self.getNextWeekDate(for: ticket.startDayOfWeek!)
                     let day2 = self.getNextWeekDate(for: ticket.endDayOfWeek!)
-                    print(day1, day2)
-//                    ModelManager.shared.loadWay(destinationCode: ticket.cityCode!, startDate: day1!, endDate: day2!,completion: {
-//                        DispatchQueue.main.async {
-//                            self.table.reloadData()
-//                        }
-//                    })
+                    ModelManager.shared.loadWay(destinationCode: ticket.cityCode!, startDate: day1!, endDate: day2!,completion: {
+                        DispatchQueue.main.async {
+                            self.table.tableFooterView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.table.frame.size.width, height: 120))
+                            self.table.reloadData()
+                        }
+                    })
                 }
         })
     }
     
-//    func getNextDayOfWeek(firstDate:Int, secondDate:Int) -> (String,String) {
-//        let calendar = Calendar.current
-//        var startDate = Date()
-//        
-//        // Находим дату следующего понедельника
-//        while calendar.component(.weekday, from: startDate) != 2 {
-//            startDate = calendar.date(byAdding: .day, value: firstDate, to: startDate)!
-//        }
-//        
-//        // Добавляем 6 дней для получения даты воскресенья на следующей неделе
-//        let endDate = calendar.date(byAdding: .day, value: secondDate, to: startDate)!
-//        
-//        return (self.dateFromJSON(startDate), self.dateFromJSON(endDate))
-//    }
+   
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.post(name: Notification.Name("setupScroll"), object: self.table)
+    }
     
     func getNextWeekDate(for dayOfWeek: Int) -> String? {
         let today = Date()
            
            var calendar = Calendar.current
-           calendar.firstWeekday = 2 // Понедельник - 2
-           
-           let currentWeekday = calendar.component(.weekday, from: today)
+           calendar.firstWeekday = 2
+        
+           let currentWeekday = calendar.component(.weekday, from: today) - 1
            
            var components = DateComponents()
-           components.day = (dayOfWeek - currentWeekday + 7) % 7
+           components.day = (7 - currentWeekday) + dayOfWeek
            
            if let nextWeekDate = calendar.date(byAdding: components, to: today) {
                return self.dateFromJSON(nextWeekDate)
@@ -67,23 +56,6 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
         
     }
     
-    func getWeekendDates()->(String,String)?{
-        let calendar = Calendar.current
-
-        if let nextWeekend = calendar.nextWeekend(startingAfter: Date()) {
-            let startDate = nextWeekend.start
-            let endDate = nextWeekend.end
-            
-            return (self.dateFromJSON(startDate), self.dateFromJSON(endDate))
-        } else {
-            return nil
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        NotificationCenter.default.post(name: Notification.Name("setupScroll"), object: self.table)
-    }
     
     func dateFromJSON(_ JSONdate: Date) -> String {
         
@@ -91,6 +63,24 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
         dateFormatterPrint.dateFormat = "yyyy-MM-dd"
         
         return dateFormatterPrint.string(from: JSONdate)
+    }
+    
+    func convertDate(_ JSONdate: String) -> String {
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.locale = Locale(identifier: "ru_RU")
+        dateFormatterPrint.dateFormat = "d MMMM"
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        
+        // Проверка на корректность формата даты
+        guard let date = dateFormatterGet.date(from: JSONdate) else {
+            print("Ошибка: Некорректный формат даты")
+            return ""
+        }
+        
+        return dateFormatterPrint.string(from: date)
         
     }
 
@@ -101,9 +91,7 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        
-        
-        
+
         // Проверка на корректность формата даты
         guard let date = dateFormatterGet.date(from: dateString) else {
             print("Ошибка: Некорректный формат даты")
@@ -139,21 +127,37 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
 
 extension TicketController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ModelManager.shared.baseTicket.count
+        guard (ModelManager.shared.baseTicket.count) > 0 else {
+            return 0
+        }
+        return ModelManager.shared.baseTicket.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 206
+        if(indexPath.row != 2){
+            return 206
+        }else{
+            return 178
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainTicketCell
-        cell.collectionTickets.delegate = self
-        cell.collectionTickets.dataSource = self
-        cell.collectionTickets.tag = indexPath.row
-        cell.collectionTickets.reloadData()
-        
-        return cell
+        if(indexPath.row != 2){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainTicketCell
+            cell.collectionTickets.delegate = self
+            cell.collectionTickets.dataSource = self
+            cell.collectionTickets.tag = indexPath.row < 2 ? indexPath.row:indexPath.row-1
+            cell.collectionTickets.reloadData()
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "promoCell", for: indexPath) as! MainTicketCell
+           
+            cell.backView.layer.cornerRadius = 16
+            cell.backView.layer.masksToBounds = true
+            
+            return cell
+        }
     }
     
     
@@ -187,6 +191,11 @@ extension TicketController: UICollectionViewDelegate, UICollectionViewDataSource
             cell.imageRecomend.contentMode = .scaleToFill
             cell.titleRecomend.text = ticket.titleWay
             cell.subtitleRecomend.text = ticket.subtitleWay
+            
+            let day1 = self.getNextWeekDate(for: ticket.startDayOfWeek!)
+            let day2 = self.getNextWeekDate(for: ticket.endDayOfWeek!)
+            
+            cell.datesRecomend.text = "\(self.convertDate(day1!)) - \(self.convertDate(day2!))"
             
             return cell
         }else{
@@ -226,11 +235,6 @@ extension TicketController: UICollectionViewDelegate, UICollectionViewDataSource
             if UIApplication.shared.canOpenURL(url) {
                  UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-//            if let url = URL(string: "https://aviasales.ru" + (ticket.link ?? "")) {
-//                let safariViewController = SFSafariViewController(url: url)
-//                safariViewController.delegate = self
-//                self.navigationController?.present(safariViewController, animated: true, completion: nil)
-//            }
         }
     }
     

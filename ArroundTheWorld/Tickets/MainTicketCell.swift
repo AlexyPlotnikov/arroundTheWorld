@@ -10,11 +10,30 @@ import UIKit
 class MainTicketCell: UITableViewCell {
 
     @IBOutlet weak var collectionTickets: UICollectionView!
+    
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var scrollingLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        if(self.backView != nil){
+            self.backView.addGradientBackground(firstColor: UIColor.init(displayP3Red: 253/255, green: 110/255, blue: 106/255, alpha: 0.16), secondColor: UIColor.init(displayP3Red: 255/255, green: 198/255, blue: 0/255, alpha: 0.16))
+        }
     }
 
    
+}
 
+extension UIView{
+    func addGradientBackground(firstColor: UIColor, secondColor: UIColor){
+        clipsToBounds = true
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
+        gradientLayer.frame = self.bounds
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        print(gradientLayer.frame)
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

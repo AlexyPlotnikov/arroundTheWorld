@@ -25,12 +25,13 @@ class PlacesController: UIViewController, Storyboardable {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         NotificationCenter.default.post(name: Notification.Name("setupScroll"), object: self.table)
+        self.table.tableFooterView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.table.frame.size.width, height: 120))
     }
     
     @objc func methodOfReceivedNotification(notification: Notification) {
         DispatchQueue.main.async{
             self.table.hideSkeletonView()
-            self.table.tableFooterView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.table.frame.size.width, height: 120))
+            
         }
     }
    
