@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TicketNavigation : AnyObject{
-  
+  func pushSearchTicket()
 }
 
 class TicketViewModel{

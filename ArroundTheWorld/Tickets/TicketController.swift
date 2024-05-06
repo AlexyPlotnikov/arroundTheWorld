@@ -22,7 +22,7 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
                     let day2 = self.getNextWeekDate(for: ticket.endDayOfWeek!)
                     ModelManager.shared.loadWay(destinationCode: ticket.cityCode!, startDate: day1!, endDate: day2!,completion: {
                         DispatchQueue.main.async {
-                            self.table.tableFooterView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.table.frame.size.width, height: 120))
+                            self.table.tableFooterView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.table.frame.size.width, height: 125))
                             self.table.reloadData()
                         }
                     })
@@ -122,6 +122,11 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
             return nil
         }
     }
+    
+    @IBAction func searchTickets(_ sender: Any) {
+        self.viewModel.navigation.pushSearchTicket()
+    }
+    
    
 }
 
