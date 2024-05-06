@@ -6,17 +6,21 @@
 //
 
 import UIKit
+import MarqueeLabel
 
 class MainTicketCell: UITableViewCell {
 
+    @IBOutlet weak var popularCollection: UICollectionView!
     @IBOutlet weak var collectionTickets: UICollectionView!
     
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var scrollingLabel: UILabel!
+    @IBOutlet weak var scrollingLabel: MarqueeLabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         if(self.backView != nil){
             self.backView.addGradientBackground(firstColor: UIColor.init(displayP3Red: 253/255, green: 110/255, blue: 106/255, alpha: 0.16), secondColor: UIColor.init(displayP3Red: 255/255, green: 198/255, blue: 0/255, alpha: 0.16))
         }

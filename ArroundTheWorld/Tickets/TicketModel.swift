@@ -97,3 +97,30 @@ struct Datum: Codable {
         case transfers
     }
 }
+
+
+struct PopularTicket: Codable {
+    let data: [String: PopularWay]?
+    let currency: String?
+    let success: Bool?
+}
+
+// MARK: - Datum
+struct PopularWay: Codable {
+    let origin: String?
+    let destination, airline: String?
+    let departureAt, returnAt, expiresAt: String?
+    let price, flightNumber, transfers: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case origin, destination, airline
+        case departureAt = "departure_at"
+        case returnAt = "return_at"
+        case expiresAt = "expires_at"
+        case price
+        case flightNumber = "flight_number"
+        case transfers
+    }
+}
+
+

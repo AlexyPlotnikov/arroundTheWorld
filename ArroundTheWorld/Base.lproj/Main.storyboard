@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7lP-Uo-uHB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7lP-Uo-uHB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1047,7 +1047,7 @@
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb7-1E-SI1">
-                                                                        <rect key="frame" x="12" y="12.000000000000002" width="45" height="19.666666666666671"/>
+                                                                        <rect key="frame" x="12" y="12.000000000000002" width="45" height="18.666666666666671"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1059,37 +1059,37 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEH-N2-lAM">
-                                                                        <rect key="frame" x="12.000000000000002" y="39.666666666666664" width="28.666666666666671" height="14.333333333333336"/>
+                                                                        <rect key="frame" x="12.000000000000002" y="38.666666666666664" width="28.666666666666671" height="14.333333333333336"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clj-jj-mY8">
-                                                                        <rect key="frame" x="12.000000000000002" y="80.333333333333329" width="28.666666666666671" height="14.333333333333329"/>
+                                                                        <rect key="frame" x="12.000000000000002" y="79.333333333333329" width="28.666666666666671" height="14.333333333333329"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08w-7o-xTv">
-                                                                        <rect key="frame" x="48.666666666666664" y="39.666666666666664" width="26.999999999999993" height="14.333333333333336"/>
+                                                                        <rect key="frame" x="48.666666666666664" y="38.666666666666664" width="26.999999999999993" height="14.333333333333336"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYl-Op-Zis">
-                                                                        <rect key="frame" x="48.666666666666664" y="80.333333333333329" width="26.999999999999993" height="14.333333333333329"/>
+                                                                        <rect key="frame" x="48.666666666666664" y="79.333333333333329" width="26.999999999999993" height="14.333333333333329"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7b-ej-qnM">
-                                                                        <rect key="frame" x="12" y="58.000000000000007" width="125" height="14.333333333333336"/>
+                                                                        <rect key="frame" x="12" y="57.000000000000007" width="125" height="14.333333333333336"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5B7-6x-jBT">
-                                                                        <rect key="frame" x="12" y="98.666666666666671" width="125" height="14.333333333333329"/>
+                                                                        <rect key="frame" x="12" y="97.666666666666671" width="125" height="14.333333333333329"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -1164,16 +1164,81 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-ht-RGq">
                                                     <rect key="frame" x="12" y="4" width="369" height="198"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="горячие 🔥 билеты горячие 🔥 билеты горячие 🔥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFo-dx-LnH">
-                                                            <rect key="frame" x="12" y="12" width="345" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="горячие 🔥 билеты горячие 🔥 билеты горячие 🔥 билеты горячие 🔥 билеты горячие 🔥 билеты горячие 🔥 билеты " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFo-dx-LnH" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                                            <rect key="frame" x="12" y="12.000000000000002" width="345" height="19.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="scrollDuration">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-tM-LNG">
+                                                            <rect key="frame" x="0.0" y="39.666666666666671" width="369" height="150.33333333333331"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vgq-XI-p9t">
+                                                                <size key="itemSize" width="196" height="128"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popularCell" id="epr-7f-ywn" customClass="PopularCell" customModule="ArroundTheWorld" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="11" width="196" height="128"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Bf-na-7qp">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="196" height="128"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WQm-kk-kw9">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="196" height="128"/>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-B2-4kh">
+                                                                                <rect key="frame" x="12" y="12" width="32.333333333333336" height="14.333333333333336"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY7-Wv-ddo">
+                                                                                <rect key="frame" x="12" y="96.333333333333329" width="172" height="19.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="WQm-kk-kw9" firstAttribute="top" secondItem="9Bf-na-7qp" secondAttribute="top" id="ARj-VH-ZvL"/>
+                                                                            <constraint firstItem="aY7-Wv-ddo" firstAttribute="leading" secondItem="9Bf-na-7qp" secondAttribute="leading" constant="12" id="FNE-g5-Izo"/>
+                                                                            <constraint firstItem="WQm-kk-kw9" firstAttribute="leading" secondItem="9Bf-na-7qp" secondAttribute="leading" id="O8F-VL-Zza"/>
+                                                                            <constraint firstItem="WuG-B2-4kh" firstAttribute="leading" secondItem="9Bf-na-7qp" secondAttribute="leading" constant="12" id="awo-g2-L3D"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="aY7-Wv-ddo" secondAttribute="bottom" constant="12" id="bO8-hG-TfX"/>
+                                                                            <constraint firstItem="WuG-B2-4kh" firstAttribute="top" secondItem="9Bf-na-7qp" secondAttribute="top" constant="12" id="dEq-0v-2Fv"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="WQm-kk-kw9" secondAttribute="bottom" id="eXl-6m-fy1"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="WQm-kk-kw9" secondAttribute="trailing" id="neX-Q9-m06"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="aY7-Wv-ddo" secondAttribute="trailing" constant="12" id="o8G-T3-FQb"/>
+                                                                        </constraints>
+                                                                    </collectionViewCellContentView>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <size key="customSize" width="196" height="128"/>
+                                                                    <connections>
+                                                                        <outlet property="cityImage" destination="WQm-kk-kw9" id="Tdg-5T-6Wy"/>
+                                                                        <outlet property="nameWayLbl" destination="aY7-Wv-ddo" id="chB-Ja-StY"/>
+                                                                        <outlet property="priceLbl" destination="WuG-B2-4kh" id="yrd-J5-3jG"/>
+                                                                    </connections>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                        </collectionView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="c2u-tM-LNG" secondAttribute="trailing" id="0GT-V9-P1a"/>
+                                                        <constraint firstAttribute="bottom" secondItem="c2u-tM-LNG" secondAttribute="bottom" constant="8" id="55i-B1-JKw"/>
+                                                        <constraint firstItem="c2u-tM-LNG" firstAttribute="top" secondItem="JFo-dx-LnH" secondAttribute="bottom" constant="8" id="UEN-0q-28N"/>
                                                         <constraint firstItem="JFo-dx-LnH" firstAttribute="leading" secondItem="DMt-ht-RGq" secondAttribute="leading" constant="12" id="WON-3Z-659"/>
+                                                        <constraint firstItem="c2u-tM-LNG" firstAttribute="leading" secondItem="DMt-ht-RGq" secondAttribute="leading" id="YaM-Mf-yu7"/>
                                                         <constraint firstAttribute="trailing" secondItem="JFo-dx-LnH" secondAttribute="trailing" constant="12" id="kQy-oJ-zom"/>
                                                         <constraint firstItem="JFo-dx-LnH" firstAttribute="top" secondItem="DMt-ht-RGq" secondAttribute="top" constant="12" id="loA-2z-zya"/>
                                                     </constraints>
@@ -1188,6 +1253,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="backView" destination="DMt-ht-RGq" id="OTz-c8-gHS"/>
+                                            <outlet property="popularCollection" destination="c2u-tM-LNG" id="FbJ-hC-yCU"/>
                                             <outlet property="scrollingLabel" destination="JFo-dx-LnH" id="XIv-qo-uot"/>
                                         </connections>
                                     </tableViewCell>

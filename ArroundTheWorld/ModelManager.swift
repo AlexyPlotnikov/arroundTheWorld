@@ -20,6 +20,7 @@ class ModelManager: NSObject {
     var cities:[CityModel] = []
     var baseTicket:BaseTicket = []
     var recomendTickets:[[Datum]] = []
+    var popularWay:PopularTicket?
     
     func firstLoad() {
         events = EventModel(count: 0, next: "", previous: "", results: [])
@@ -47,6 +48,20 @@ class ModelManager: NSObject {
                 self.cities = tempCity
                 completion?()
             }
+        })
+    }
+    
+    func loadImageByCity(cityName:String, completion:@escaping (String)->Void){
+        getRequest(URLString: "https://api.unsplash.com/search/photos?query=\(cityName)&client_id=-as2_F8qpGx15vHA9QE1_Sw2TBE1DIxIDg0FtNthbXY&per_page=1", completion: {
+            result in
+            if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: .prettyPrinted),
+               let tempPhoto = try? JSONDecoder().decode(UnsplashPhotos.self, from: jsonData) {
+                print(tempPhoto)
+                if(tempPhoto.results!.count>0){
+                    completion(tempPhoto.results![0].urls?.small ?? "")
+                }
+            }
+            
         })
     }
     
@@ -82,6 +97,19 @@ class ModelManager: NSObject {
         } else {
             return nil
         }
+    }
+    
+    func loadPopularWays(completion: (() -> Void)? = nil){
+        getRequest(URLString: "http://api.travelpayouts.com/v1/city-directions?origin=\(self.getCurrentCity() ?? "")&currency=rub",needSecretKey: true, completion: {
+            result in
+            if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: .prettyPrinted),
+               let tempPopularTicket = try? JSONDecoder().decode(PopularTicket.self, from: jsonData) {
+               
+                self.popularWay = tempPopularTicket
+                completion?()
+                
+            }
+        })
     }
     
     func loadBase(completion: (() -> Void)? = nil){

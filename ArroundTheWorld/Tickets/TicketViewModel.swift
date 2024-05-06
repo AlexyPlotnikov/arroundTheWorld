@@ -13,7 +13,7 @@ protocol TicketNavigation : AnyObject{
 
 class TicketViewModel{
     weak var navigation : TicketNavigation!
- 
+    var decodedCities:Cities!
     
     init(navigationController : TicketNavigation) {
         self.navigation = navigationController

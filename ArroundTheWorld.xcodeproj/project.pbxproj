@@ -49,6 +49,9 @@
 		5B7CC2732AD17C8D00463F84 /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CC2722AD17C8D00463F84 /* ArticlesController.swift */; };
 		5B7CC2762AD17CBD00463F84 /* HousingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CC2752AD17CBD00463F84 /* HousingController.swift */; };
 		5B7CC2792AD17CD900463F84 /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CC2782AD17CD900463F84 /* EventsController.swift */; };
+		5B83C8342BDF79D40095E7B2 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83C8332BDF79D40095E7B2 /* PopularCell.swift */; };
+		5B83C8372BDF8DD50095E7B2 /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 5B83C8362BDF8DD50095E7B2 /* MarqueeLabel */; };
+		5B83C8392BDF995A0095E7B2 /* UnsplashPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83C8382BDF995A0095E7B2 /* UnsplashPhotos.swift */; };
 		5B979D582AFD46420056CB94 /* UIView-Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 5B979D572AFD46420056CB94 /* UIView-Shimmer */; };
 		5B979D5A2AFD5A170056CB94 /* PaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B979D592AFD5A170056CB94 /* PaginationView.swift */; };
 		5BBA71AB2AD16E45007FA925 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA71AA2AD16E45007FA925 /* MainViewModel.swift */; };
@@ -145,6 +148,8 @@
 		5B7CC2722AD17C8D00463F84 /* ArticlesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesController.swift; sourceTree = "<group>"; };
 		5B7CC2752AD17CBD00463F84 /* HousingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingController.swift; sourceTree = "<group>"; };
 		5B7CC2782AD17CD900463F84 /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
+		5B83C8332BDF79D40095E7B2 /* PopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
+		5B83C8382BDF995A0095E7B2 /* UnsplashPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotos.swift; sourceTree = "<group>"; };
 		5B979D592AFD5A170056CB94 /* PaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationView.swift; sourceTree = "<group>"; };
 		5BBA71AA2AD16E45007FA925 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5BBA71AD2AD16F27007FA925 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -208,6 +213,7 @@
 				1F04F3962BBC1B9200E1A250 /* SPIndicator in Frameworks */,
 				5B79DB342B53E67B0044A2BD /* FlexiblePageControl in Frameworks */,
 				5B1D8C272ADDA13C002DD7AA /* FloatingPanel in Frameworks */,
+				5B83C8372BDF8DD50095E7B2 /* MarqueeLabel in Frameworks */,
 				5BD541332B9ADE85000DB601 /* AppMetricaCrashes in Frameworks */,
 				5BD541312B9ADE85000DB601 /* AppMetricaCore in Frameworks */,
 				1F9674822BBFEC54006540C0 /* ImageViewer_swift in Frameworks */,
@@ -225,6 +231,8 @@
 				5BBD830F2BD6DBD000966E7F /* MainTicketCell.swift */,
 				1F0FA7CE2BD676C0004DC574 /* TicketViewModel.swift */,
 				5BBD830D2BD6D2DE00966E7F /* TicketModel.swift */,
+				5B83C8332BDF79D40095E7B2 /* PopularCell.swift */,
+				5B83C8382BDF995A0095E7B2 /* UnsplashPhotos.swift */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -474,6 +482,7 @@
 				5BD541322B9ADE85000DB601 /* AppMetricaCrashes */,
 				1F04F3952BBC1B9200E1A250 /* SPIndicator */,
 				1F9674812BBFEC54006540C0 /* ImageViewer_swift */,
+				5B83C8362BDF8DD50095E7B2 /* MarqueeLabel */,
 			);
 			productName = ArroundTheWorld;
 			productReference = 1F9ECD3F2ACEC2CA00DA43BC /* ArroundTheWorld.app */;
@@ -512,6 +521,7 @@
 				5BD5412F2B9ADE85000DB601 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
 				1F04F3942BBC1B9200E1A250 /* XCRemoteSwiftPackageReference "SPIndicator" */,
 				1F9674802BBFEC54006540C0 /* XCRemoteSwiftPackageReference "ImageViewer" */,
+				5B83C8352BDF8DD50095E7B2 /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 			);
 			productRefGroup = 1F9ECD402ACEC2CA00DA43BC /* Products */;
 			projectDirPath = "";
@@ -573,6 +583,7 @@
 				5BE0C9BE2B6F86D200320275 /* EventCell.swift in Sources */,
 				1F0FA7CF2BD676C0004DC574 /* TicketViewModel.swift in Sources */,
 				5BBA71B52AD1701E007FA925 /* MainCoordinator.swift in Sources */,
+				5B83C8342BDF79D40095E7B2 /* PopularCell.swift in Sources */,
 				5B3B84392BCAF90400E68205 /* CityController.swift in Sources */,
 				5B4B775E2AD316140010E680 /* PlacesViewModel.swift in Sources */,
 				5BBD83122BD6DF0900966E7F /* RecomendedTicketCell.swift in Sources */,
@@ -619,6 +630,7 @@
 				5B4C89B92AD46E6200216C90 /* PlaceCell.swift in Sources */,
 				5B4A5C762AE836C10094B6F8 /* PosterModel.swift in Sources */,
 				5BBF616E2AE04027001D035F /* BannerCell.swift in Sources */,
+				5B83C8392BDF995A0095E7B2 /* UnsplashPhotos.swift in Sources */,
 				5BEB20362B2E26AD00E391B1 /* DetailCell.swift in Sources */,
 				5BE0C9BA2B6F820A00320275 /* EventViewModel.swift in Sources */,
 				5BE0C9BC2B6F825300320275 /* EventModel.swift in Sources */,
@@ -775,7 +787,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ACF2DMCJ2;
+				DEVELOPMENT_TEAM = XSLH3YV6QU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArroundTheWorld/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "кругосветка";
@@ -793,7 +805,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arroundtheworld.atw;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arroundtheworld.atw--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -814,7 +826,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ACF2DMCJ2;
+				DEVELOPMENT_TEAM = XSLH3YV6QU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArroundTheWorld/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "кругосветка";
@@ -832,7 +844,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arroundtheworld.atw;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arroundtheworld.atw--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -917,6 +929,14 @@
 				kind = branch;
 			};
 		};
+		5B83C8352BDF8DD50095E7B2 /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cbpowell/MarqueeLabel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		5B979D562AFD46420056CB94 /* XCRemoteSwiftPackageReference "UIView-Shimmer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/omerfarukozturk/UIView-Shimmer";
@@ -965,6 +985,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B79DB322B53E67B0044A2BD /* XCRemoteSwiftPackageReference "FlexiblePageControl" */;
 			productName = FlexiblePageControl;
+		};
+		5B83C8362BDF8DD50095E7B2 /* MarqueeLabel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B83C8352BDF8DD50095E7B2 /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
+			productName = MarqueeLabel;
 		};
 		5B979D572AFD46420056CB94 /* UIView-Shimmer */ = {
 			isa = XCSwiftPackageProductDependency;
