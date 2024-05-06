@@ -1263,13 +1263,38 @@
                                     <outlet property="delegate" destination="oJx-Xf-uKt" id="yLk-Y8-RTD"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOK-rL-8Cc">
+                                <rect key="frame" x="0.0" y="692" width="393" height="160"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k49-lN-ssd">
+                                        <rect key="frame" x="12" y="12" width="137" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" найти билеты" image="search">
+                                            <color key="titleColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchTickets:" destination="oJx-Xf-uKt" eventType="touchUpInside" id="qeC-DZ-xoF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="k49-lN-ssd" firstAttribute="top" secondItem="jOK-rL-8Cc" secondAttribute="top" constant="12" id="FNs-Ef-m9J"/>
+                                    <constraint firstAttribute="height" constant="160" id="Ib7-4e-rHF"/>
+                                    <constraint firstItem="k49-lN-ssd" firstAttribute="leading" secondItem="jOK-rL-8Cc" secondAttribute="leading" constant="12" id="UFY-hd-zgl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FdY-Nj-lAZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Oss-tn-MEf" firstAttribute="trailing" secondItem="FdY-Nj-lAZ" secondAttribute="trailing" id="5c6-3z-EPB"/>
+                            <constraint firstItem="jOK-rL-8Cc" firstAttribute="trailing" secondItem="FdY-Nj-lAZ" secondAttribute="trailing" id="97T-rW-IqV"/>
                             <constraint firstItem="Oss-tn-MEf" firstAttribute="leading" secondItem="FdY-Nj-lAZ" secondAttribute="leading" id="Fki-43-fRn"/>
+                            <constraint firstItem="jOK-rL-8Cc" firstAttribute="leading" secondItem="FdY-Nj-lAZ" secondAttribute="leading" id="IgS-gN-4de"/>
                             <constraint firstItem="Oss-tn-MEf" firstAttribute="top" secondItem="FdY-Nj-lAZ" secondAttribute="top" id="JeA-cP-0RJ"/>
+                            <constraint firstAttribute="bottom" secondItem="jOK-rL-8Cc" secondAttribute="bottom" id="MRq-Xj-MMv"/>
                             <constraint firstAttribute="bottom" secondItem="Oss-tn-MEf" secondAttribute="bottom" id="MnO-Sk-MHq"/>
                         </constraints>
                     </view>
@@ -1280,6 +1305,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLs-Ef-zLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-825.19083969465646" y="1317.605633802817"/>
+        </scene>
+        <!--Search Ticket Controller-->
+        <scene sceneID="RT6-LG-6VY">
+            <objects>
+                <viewController storyboardIdentifier="searchTicketVC" id="4eu-2Z-YWj" customClass="SearchTicketController" customModule="ArroundTheWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vJX-Dz-u3S">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTq-sC-uTX">
+                                <rect key="frame" x="12" y="71" width="56" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="mapMarkerGray">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JsS-He-FZD">
+                                <rect key="frame" x="12" y="95" width="369" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="1l5-bA-ycn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G3K-k8-awc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JsS-He-FZD" firstAttribute="leading" secondItem="G3K-k8-awc" secondAttribute="leading" constant="12" id="BYP-xD-ksk"/>
+                            <constraint firstItem="G3K-k8-awc" firstAttribute="trailing" secondItem="JsS-He-FZD" secondAttribute="trailing" constant="12" id="DjN-Ig-yAB"/>
+                            <constraint firstItem="qTq-sC-uTX" firstAttribute="leading" secondItem="G3K-k8-awc" secondAttribute="leading" constant="12" id="MWW-FW-Kfw"/>
+                            <constraint firstItem="qTq-sC-uTX" firstAttribute="top" secondItem="G3K-k8-awc" secondAttribute="top" constant="12" id="o0e-5T-CBx"/>
+                            <constraint firstItem="JsS-He-FZD" firstAttribute="top" secondItem="qTq-sC-uTX" secondAttribute="bottom" constant="8" id="yWU-aq-CRr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="geoBtn" destination="qTq-sC-uTX" id="6Sv-3R-PPK"/>
+                        <outlet property="searchField" destination="JsS-He-FZD" id="j0s-BT-WMz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hh-gF-wP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="1993"/>
         </scene>
         <!--Places Controller-->
         <scene sceneID="CrT-Kn-6sD">
@@ -1726,6 +1795,8 @@
     <resources>
         <image name="backIcon" width="40" height="40"/>
         <image name="mapMarker" width="16" height="16"/>
+        <image name="mapMarkerGray" width="16" height="16"/>
+        <image name="search" width="24" height="24"/>
         <image name="shareBtn" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

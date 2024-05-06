@@ -17,6 +17,7 @@
 		1F9ECD4A2ACEC2CA00DA43BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9ECD482ACEC2CA00DA43BC /* Main.storyboard */; };
 		1F9ECD4C2ACEC2CE00DA43BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9ECD4B2ACEC2CE00DA43BC /* Assets.xcassets */; };
 		1F9ECD4F2ACEC2CE00DA43BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9ECD4D2ACEC2CE00DA43BC /* LaunchScreen.storyboard */; };
+		1FC95D482BE8B51500DEDADF /* SearchTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC95D472BE8B51500DEDADF /* SearchTicketController.swift */; };
 		5B04C10B2B4DBB6A004D4E11 /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B04C10A2B4DBB6A004D4E11 /* DetailNavigationController.swift */; };
 		5B04C10D2B4DBBC4004D4E11 /* ArtcilesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B04C10C2B4DBBC4004D4E11 /* ArtcilesDetailController.swift */; };
 		5B0A4DC02AD5B3E6000CAD09 /* JTAppleCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0A4DBF2AD5B3E6000CAD09 /* JTAppleCalendar */; };
@@ -120,6 +121,7 @@
 		1F9ECD4B2ACEC2CE00DA43BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9ECD4E2ACEC2CE00DA43BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9ECD502ACEC2CE00DA43BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FC95D472BE8B51500DEDADF /* SearchTicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTicketController.swift; sourceTree = "<group>"; };
 		5B04C10A2B4DBB6A004D4E11 /* DetailNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
 		5B04C10C2B4DBBC4004D4E11 /* ArtcilesDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtcilesDetailController.swift; sourceTree = "<group>"; };
 		5B0A4DC12AD5B6B6000CAD09 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				5BD7769D2AFC017D00E9BFB2 /* LocationService.swift */,
 				5B979D592AFD5A170056CB94 /* PaginationView.swift */,
 				5B31A3902B03EE8000F529E3 /* DateCalendar.swift */,
+				1FC95D462BE8B4BC00DEDADF /* SearchTicket */,
 				1F0FA7CB2BD67693004DC574 /* Tickets */,
 				5BEB202C2B2E05B700E391B1 /* Detail */,
 				5BBF616C2AE03F60001D035F /* Banner */,
@@ -285,6 +288,14 @@
 				1F9ECD502ACEC2CE00DA43BC /* Info.plist */,
 			);
 			path = ArroundTheWorld;
+			sourceTree = "<group>";
+		};
+		1FC95D462BE8B4BC00DEDADF /* SearchTicket */ = {
+			isa = PBXGroup;
+			children = (
+				1FC95D472BE8B51500DEDADF /* SearchTicketController.swift */,
+			);
+			path = SearchTicket;
 			sourceTree = "<group>";
 		};
 		5B04C1092B4DBA52004D4E11 /* ArticlesDetail */ = {
@@ -571,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4C89BB2AD4703200216C90 /* ImageCollectionCell.swift in Sources */,
+				1FC95D482BE8B51500DEDADF /* SearchTicketController.swift in Sources */,
 				5B31A3912B03EE8000F529E3 /* DateCalendar.swift in Sources */,
 				5BBA71AE2AD16F27007FA925 /* AppCoordinator.swift in Sources */,
 				5B4A5C7A2AE83C450094B6F8 /* PostersCell.swift in Sources */,

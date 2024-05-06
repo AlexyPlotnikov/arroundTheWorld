@@ -8,7 +8,6 @@
 import UIKit
 import SDWebImage
 import SafariServices
-import MarqueeLabel
 
 class TicketController: UIViewController, Storyboardable, SFSafariViewControllerDelegate {
     
@@ -18,27 +17,17 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         ModelManager.shared.loadBase(completion: {
-            ModelManager.shared.loadPopularWays(completion: {
-                DispatchQueue.main.async{
-                    if let cell = self.table.cellForRow(at: IndexPath(row: 2, section: 0)) as? MainTicketCell{
-                        cell.popularCollection.reloadData()
-                    }
+                for ticket in ModelManager.shared.baseTicket{
+                    let day1 = self.getNextWeekDate(for: ticket.startDayOfWeek!)
+                    let day2 = self.getNextWeekDate(for: ticket.endDayOfWeek!)
+                    ModelManager.shared.loadWay(destinationCode: ticket.cityCode!, startDate: day1!, endDate: day2!,completion: {
+                        DispatchQueue.main.async {
+                            self.table.tableFooterView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.table.frame.size.width, height: 125))
+                            self.table.reloadData()
+                        }
+                    })
                 }
-            })
-            for ticket in ModelManager.shared.baseTicket{
-                let day1 = self.getNextWeekDate(for: ticket.startDayOfWeek!)
-                let day2 = self.getNextWeekDate(for: ticket.endDayOfWeek!)
-                ModelManager.shared.loadWay(destinationCode: ticket.cityCode!, startDate: day1!, endDate: day2!,completion: {
-                    DispatchQueue.main.async {
-                        self.table.tableFooterView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.table.frame.size.width, height: 120))
-                        self.table.reloadData()
-                       
-                    }
-                })
-            }
         })
-        
-        
     }
     
    
@@ -133,23 +122,12 @@ class TicketController: UIViewController, Storyboardable, SFSafariViewController
             return nil
         }
     }
-   
-    func getCityByCode(code:String)->String?{
-        if let path = Bundle.main.path(forResource: "city", ofType: "json"),  self.viewModel.decodedCities == nil {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let decodedData = try JSONDecoder().decode(Cities.self, from: data)
-                self.viewModel.decodedCities = decodedData
-                return self.viewModel.decodedCities.first(where: {$0.code == code})?.name ?? ""
-                
-            } catch {
-                print("Ошибка при чтении файла:", error)
-                return nil
-            }
-        } else {
-            return self.viewModel.decodedCities.first(where: {$0.code == code})?.name ?? ""
-        }
+    
+    @IBAction func searchTickets(_ sender: Any) {
+        self.viewModel.navigation.pushSearchTicket()
     }
+    
+   
 }
 
 extension TicketController:UITableViewDelegate, UITableViewDataSource{
@@ -173,7 +151,7 @@ extension TicketController:UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainTicketCell
             cell.collectionTickets.delegate = self
             cell.collectionTickets.dataSource = self
-            cell.collectionTickets.tag = indexPath.row
+            cell.collectionTickets.tag = indexPath.row < 2 ? indexPath.row:indexPath.row-1
             cell.collectionTickets.reloadData()
             
             return cell
@@ -182,15 +160,6 @@ extension TicketController:UITableViewDelegate, UITableViewDataSource{
            
             cell.backView.layer.cornerRadius = 16
             cell.backView.layer.masksToBounds = true
-            cell.popularCollection.tag = indexPath.row
-            cell.popularCollection.delegate = self
-            cell.popularCollection.dataSource = self
-            cell.popularCollection.reloadData()
-            cell.scrollingLabel.type = .continuous
-            cell.scrollingLabel.speed = .duration(10)
-            cell.scrollingLabel.animationDelay = 0
-            cell.scrollingLabel.holdScrolling = false
-            cell.scrollingLabel.triggerScrollStart()
             
             return cell
         }
@@ -202,16 +171,11 @@ extension TicketController:UITableViewDelegate, UITableViewDataSource{
 extension TicketController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if(collectionView.tag != 2){
-            if(indexPath.row == 0){
-                return CGSize(width: 146, height: 198)
-            }else{
-                return CGSize(width: 172, height: 198)
-            }
+        if(indexPath.row == 0){
+            return CGSize(width: 146, height: 198)
         }else{
-            return CGSize(width: 170, height: 120)
+            return CGSize(width: 172, height: 198)
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -219,80 +183,53 @@ extension TicketController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView.tag != 2){
-            let code = ModelManager.shared.baseTicket[collectionView.tag < 2 ? collectionView.tag:collectionView.tag-1].cityCode
-            return 1 + (ModelManager.shared.recomendTickets.first(where: {$0[0].destination == code})?.count ?? 0)
-        }else{
-            return ModelManager.shared.popularWay?.data?.count ?? 0
-        }
-       
+        let code = ModelManager.shared.baseTicket[collectionView.tag].cityCode
+        return 1 + (ModelManager.shared.recomendTickets.first(where: {$0[0].destination == code})?.count ?? 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(collectionView.tag != 2){
-            if(indexPath.row == 0){
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "titleCell", for: indexPath) as! RecomendedTicketCell
-                
-                let ticket = ModelManager.shared.baseTicket[collectionView.tag < 2 ? collectionView.tag:collectionView.tag-1]
-                cell.imageRecomend.sd_setImage(with: URL(string: ticket.imageWay ?? ""))
-                cell.imageRecomend.contentMode = .scaleToFill
-                cell.titleRecomend.text = ticket.titleWay
-                cell.subtitleRecomend.text = ticket.subtitleWay
-                
-                let day1 = self.getNextWeekDate(for: ticket.startDayOfWeek!)
-                let day2 = self.getNextWeekDate(for: ticket.endDayOfWeek!)
-                
-                cell.datesRecomend.text = "\(self.convertDate(day1!)) - \(self.convertDate(day2!))"
-                
-                return cell
-            }else{
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ticketCell", for: indexPath) as! RecomendedTicketCell
-                let code = ModelManager.shared.baseTicket[collectionView.tag < 2 ? collectionView.tag:collectionView.tag-1].cityCode
-                let ticket = ModelManager.shared.recomendTickets.first(where: {$0[0].destination == code})![indexPath.row - 1]
-                cell.priceLbl.text = "\(self.formatPrice(price: ticket.price ?? 0) ?? "")₽"
-                cell.discontLbl.isHidden = indexPath.row != 1
-                
-                let time = self.calculateTime(ticket.departureAt ?? "", addedMinutes: ticket.durationTo ?? 0)
-                cell.timeIntervalTo.text = "\(time?.0 ?? "")-\(time?.1 ?? "")"
-                cell.timeTo.text = String(format: "%02dч %02dм", (ticket.durationTo ?? 0) / 60, (ticket.durationTo ?? 0) % 60)
-                cell.returnTransferTo.text = ticket.transfers == 0 ? "без пересадок":"пересадок: \(ticket.transfers ?? 0)"
-                
-                
-                let timeBack = self.calculateTime(ticket.returnAt ?? "", addedMinutes: ticket.durationBack ?? 0)
-                cell.timeIntervalBack.text = "\(timeBack?.0 ?? "")-\(timeBack?.1 ?? "")"
-                cell.timeBack.text = String(format: "%02dч %02dм", (ticket.durationBack ?? 0) / 60, (ticket.durationBack ?? 0) % 60)
-                cell.returnTransferBack.text = ticket.returnTransfers == 0 ? "без пересадок":"пересадок: \(ticket.returnTransfers ?? 0)"
-                
-                cell.airlineImage.sd_setImage(with: URL(string: "http://pics.avs.io/200/200/\(ticket.airline ?? "").png")!)
-                
-                return cell
-            }
+        if(indexPath.row == 0){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "titleCell", for: indexPath) as! RecomendedTicketCell
+            
+            let ticket = ModelManager.shared.baseTicket[collectionView.tag]
+            cell.imageRecomend.sd_setImage(with: URL(string: ticket.imageWay ?? ""))
+            cell.imageRecomend.contentMode = .scaleToFill
+            cell.titleRecomend.text = ticket.titleWay
+            cell.subtitleRecomend.text = ticket.subtitleWay
+            
+            let day1 = self.getNextWeekDate(for: ticket.startDayOfWeek!)
+            let day2 = self.getNextWeekDate(for: ticket.endDayOfWeek!)
+            
+            cell.datesRecomend.text = "\(self.convertDate(day1!)) - \(self.convertDate(day2!))"
+            
+            return cell
         }else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "popularCell", for: indexPath) as! PopularCell
-            let popularWay = ModelManager.shared.popularWay?.data
-            let value = popularWay?[Array((popularWay?.keys)!)[indexPath.row]]
-            cell.nameWayLbl.text = self.getCityByCode(code: value?.destination ?? "")
-            cell.priceLbl.text = "\(self.formatPrice(price: value?.price ?? 0) ?? "")₽"
-            if(cell.cityImage.image == nil){
-                DispatchQueue.main.async{
-                    ModelManager.shared.loadImageByCity(cityName: self.getCityByCode(code: value?.destination ?? "")!, completion: {
-                        result in
-                        DispatchQueue.main.async{
-                            cell.cityImage.sd_setImage(with: URL(string: result))
-                            cell.cityImage.contentMode = .scaleAspectFill
-                            cell.cityImage.layer.cornerRadius = 12
-                            cell.cityImage.layer.masksToBounds = true
-                        }
-                    })
-                }
-            }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ticketCell", for: indexPath) as! RecomendedTicketCell
+            let code = ModelManager.shared.baseTicket[collectionView.tag].cityCode
+            let ticket = ModelManager.shared.recomendTickets.first(where: {$0[0].destination == code})![indexPath.row - 1]
+            cell.priceLbl.text = "\(self.formatPrice(price: ticket.price ?? 0) ?? "")₽"
+            cell.discontLbl.isHidden = indexPath.row != 1
+            
+            let time = self.calculateTime(ticket.departureAt ?? "", addedMinutes: ticket.durationTo ?? 0)
+            cell.timeIntervalTo.text = "\(time?.0 ?? "")-\(time?.1 ?? "")"
+            cell.timeTo.text = String(format: "%02dч %02dм", (ticket.durationTo ?? 0) / 60, (ticket.durationTo ?? 0) % 60)
+            cell.returnTransferTo.text = ticket.transfers == 0 ? "без пересадок":"пересадок: \(ticket.transfers ?? 0)"
+            
+            
+            let timeBack = self.calculateTime(ticket.returnAt ?? "", addedMinutes: ticket.durationBack ?? 0)
+            cell.timeIntervalBack.text = "\(timeBack?.0 ?? "")-\(timeBack?.1 ?? "")"
+            cell.timeBack.text = String(format: "%02dч %02dм", (ticket.durationBack ?? 0) / 60, (ticket.durationBack ?? 0) % 60)
+            cell.returnTransferBack.text = ticket.returnTransfers == 0 ? "без пересадок":"пересадок: \(ticket.returnTransfers ?? 0)"
+            
+            cell.airlineImage.sd_setImage(with: URL(string: "http://pics.avs.io/200/200/\(ticket.airline ?? "").png")!)
+            
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(indexPath.row > 0){
-            let code = ModelManager.shared.baseTicket[collectionView.tag < 2 ? collectionView.tag:collectionView.tag-1].cityCode
+            let code = ModelManager.shared.baseTicket[collectionView.tag].cityCode
             let ticket = ModelManager.shared.recomendTickets.first(where: {$0[0].destination == code})![indexPath.row - 1]
             print("https://aviasales.ru" + (ticket.link ?? ""))
             
