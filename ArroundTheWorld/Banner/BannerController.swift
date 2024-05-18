@@ -257,6 +257,10 @@ extension BannerController:UICollectionViewDelegate, UICollectionViewDataSource,
 //MARK: navigation
 
 extension BannerController:MainNavigation, PlacesNavigation, FloatingPanelControllerDelegate, PosterNavigation,  ArticlesNavigation, EventNavigation, TicketNavigation{
+    func pushSearchTicket() {
+        self.viewModel.navigation.pushSearchTicket()
+    }
+    
     func pushDetail<T>(model: T, type: DetailTypeEnum) where T : Decodable, T : Encodable {
         self.viewModel.navigation.pushDetail(model: model, type: type)
     }

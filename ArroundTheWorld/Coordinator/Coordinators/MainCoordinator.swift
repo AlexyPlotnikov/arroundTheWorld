@@ -49,6 +49,15 @@ class MainCoordinator:Coordinator{
 
 
 extension MainCoordinator:MainNavigation, BannerNavigation, DetailNavigation{
+    func pushSearchTicket() {
+//        let detail = SearchTicketController.createMain(with: "")
+//        let viewModel = DetailViewModel.init(navigationController: self)
+//        detail.viewModel = viewModel
+//        detail.viewModel.processModel(model: model, type: type)
+//        
+//        navigationController.pushViewController(detail, animated: true)
+    }
+    
     func pushCity() {
         let pvc = CityController.createMain(with: "cityVC")
         if #available(iOS 15.0, *) {

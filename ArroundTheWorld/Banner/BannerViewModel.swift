@@ -12,6 +12,7 @@ protocol BannerNavigation : AnyObject{
     func pushDetail<T: Codable>(model: T, type:DetailTypeEnum)
     func pushNavVC(NC: UINavigationController)
     func pushCity()
+    func pushSearchTicket()
 }
 
 class BannerViewModel{

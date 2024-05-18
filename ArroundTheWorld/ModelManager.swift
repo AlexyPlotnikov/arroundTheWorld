@@ -21,6 +21,7 @@ class ModelManager: NSObject {
     var baseTicket:BaseTicket = []
     var recomendTickets:[[Datum]] = []
     var popularWay:PopularTicket?
+    var popularImages:[String] = []
     
     func firstLoad() {
         events = EventModel(count: 0, next: "", previous: "", results: [])
@@ -52,18 +53,17 @@ class ModelManager: NSObject {
     }
     
     func loadImageByCity(cityName:String, completion:@escaping (String)->Void){
-        getRequest(URLString: "https://api.unsplash.com/search/photos?query=\(cityName)&client_id=-as2_F8qpGx15vHA9QE1_Sw2TBE1DIxIDg0FtNthbXY&per_page=1", completion: {
-            result in
-            if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: .prettyPrinted),
-               let tempPhoto = try? JSONDecoder().decode(UnsplashPhotos.self, from: jsonData) {
-                print(tempPhoto)
-                if(tempPhoto.results!.count>0){
-                    completion(tempPhoto.results![0].urls?.small ?? "")
+            getRequest(URLString: "https://api.unsplash.com/search/photos?query=город \(cityName) фото&client_id=-as2_F8qpGx15vHA9QE1_Sw2TBE1DIxIDg0FtNthbXY&per_page=1", completion: {
+                result in
+                if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: .prettyPrinted),
+                   let tempPhoto = try? JSONDecoder().decode(UnsplashPhotos.self, from: jsonData) {
+                    if(tempPhoto.results!.count>0){
+                        completion(tempPhoto.results![0].urls?.small ?? "")
+                    }
                 }
-            }
-            
-        })
-    }
+                
+            })
+        }
     
     func loadWay(destinationCode:String, startDate:String, endDate:String, completion: (() -> Void)? = nil){
 //        24573
@@ -100,7 +100,7 @@ class ModelManager: NSObject {
     }
     
     func loadPopularWays(completion: (() -> Void)? = nil){
-        getRequest(URLString: "http://api.travelpayouts.com/v1/city-directions?origin=\(self.getCurrentCity() ?? "")&currency=rub",needSecretKey: true, completion: {
+        getRequest(URLString:"https://api.travelpayouts.com/aviasales/v3/get_special_offers?origin=\(self.getCurrentCity() ?? "")&locale=ru", needSecretKey: true, completion: {
             result in
             if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: .prettyPrinted),
                let tempPopularTicket = try? JSONDecoder().decode(PopularTicket.self, from: jsonData) {

@@ -13,6 +13,7 @@ class PopularCell: UICollectionViewCell {
     @IBOutlet weak var nameWayLbl: UILabel!
     @IBOutlet weak var cityImage: UIImageView!
     var tintView:UIView!
+    var loaded = false
     
     
     override func layoutSubviews() {
